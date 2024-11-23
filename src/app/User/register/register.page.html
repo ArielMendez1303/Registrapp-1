@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-card>
+    <ion-card-content>
+      <!--Inicio forms-->
+  <form [formGroup]='formularioRegistro'>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type ="password"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Confirma la ontraseña</ion-label>
+      <ion-input formControlName="confirmacionPassword" type ="password"></ion-input>
+    </ion-item>    
+  </form>
+  <br>
+    <ion-button style = "margin-left: 45%;" [routerLink] = "['/main']">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
