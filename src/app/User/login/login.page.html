@@ -3,41 +3,37 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Login</ion-title>
+    <ion-title>Inicio sesión Alumnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-card>
-    <ion-card-content>
-      <!--Inicio forms-->
-  <form [formGroup]='formulariologin'>
+<ion-content>
+  <form [formGroup]="formulariologin" (ngSubmit)="onLogin()">
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="correo"></ion-input>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" formControlName="correo"></ion-input>
     </ion-item>
+    <div *ngIf="formulariologin.get('correo')?.invalid && formulariologin.get('correo')?.touched">
+      <ion-text color="danger">Introduce un correo válido.</ion-text>
+    </div>
+
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input formControlName="password" type ="password"></ion-input>
-    </ion-item>    
-  </form>
-  <br>
-  <ion-button style="margin-left: 45%;" [routerLink] = "['/home']">Acceder</ion-button>
-    </ion-card-content>
-  </ion-card>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div *ngIf="formulariologin.get('password')?.invalid && formulariologin.get('password')?.touched">
+      <ion-text color="danger">La contraseña debe tener al menos 6 caracteres.</ion-text>
+    </div>
 
+    <ion-button expand="full" type="submit" [disabled]="formulariologin.invalid">Iniciar Sesión</ion-button>
+  </form>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
   <ion-label>¿No tienes cuenta?</ion-label>
   <ion-button [routerLink] = "['/register']">Registrate</ion-button>
   <ion-label slot="end"> ¿Eres Profesor?</ion-label>
-  <br>
   <ion-button slot= "end" style="position:relative; " [routerLink] = "['/inicio']">Acceder</ion-button>
   <!--La versión final tendrá el profesor su propio login-->
 </ion-toolbar>

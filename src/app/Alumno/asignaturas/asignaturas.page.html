@@ -7,17 +7,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <h2>Estudiantes y sus Clases</h2>
-  <ion-list>
-    <ion-item *ngFor="let student of students">
-      <ion-label>
-        <h2>{{ student.name }}</h2>
-        <p><strong>Clases:</strong></p>
-        <ul>
-          <li *ngFor="let class of student.classes">{{ class.name }}</li>
-        </ul>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content [fullscreen]="true">
+  <div class="accordion accordion-flush" id="accordionFlush">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Programación de aplicaciones móviles
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+        <div class="accordion-body"><img src="https://firebasestorage.googleapis.com/v0/b/proyect2-daf7b.appspot.com/o/Captura%20de%20pantalla%202024-12-10%20001509.png?alt=media&token=5086d4a1-ac9a-4300-bf05-015b7175815a" alt="Horario1"></div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Arquitectura
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+        <div class="accordion-body"><img src="https://firebasestorage.googleapis.com/v0/b/proyect2-daf7b.appspot.com/o/arqui.png?alt=media&token=302f76ad-b17f-4dba-8f2f-3d240ecfab6b" alt="Horario2"></div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Programación de base de datos
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+        <div class="accordion-body"><img src="https://firebasestorage.googleapis.com/v0/b/proyect2-daf7b.appspot.com/o/bbdd.png?alt=media&token=a2f6d0f3-cfe0-4b27-87d0-236d83729e3c" alt="Horario3"></div>
+      </div>
+    </div>
+  </div>
 </ion-content>
+

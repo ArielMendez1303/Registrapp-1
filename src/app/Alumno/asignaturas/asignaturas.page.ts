@@ -13,19 +13,10 @@ import { StudentService } from '../../services/student.service';
   imports: [ CommonModule, FormsModule, IonicModule, RouterLink]
 })
 export class AsignaturasPage implements OnInit {
-  students: any[] = [];
 
-  constructor(private studentService: StudentService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.studentService.getStudentData().subscribe(
-      (response) => {
-        this.students = response.data.students;
-      },
-      (error) => {
-        console.error('Error al obtener estudiantes:', error);
-      }
-    );
   }
 }
 //No me deja entrar a esta página

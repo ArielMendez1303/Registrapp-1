@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Apollo } from 'apollo-angular';
+import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
-import gql from 'graphql-tag'; // Importar gql para las consultas
 
 @Injectable({
   providedIn: 'root',
@@ -28,3 +27,4 @@ export class StudentService {
     }).valueChanges;
   }
 }
+
